@@ -28,6 +28,7 @@ sed -i "s|/first-network/crypto-config/peerOrganizations/org1.example.com/peers/
 sed -i "s|/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore|$ADMIN_KEYSTORE_PATH|g" /opt/blockchain-explorer/config.json
 sed -i "s|/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts|$ADMIN_CERTFILE_PATH|g" /opt/blockchain-explorer/config.json
 
+logger -t CERT -p info -s "Encoding key"
 openssl x509 -outform der -in ${PWD}${CACERT_PATH} -out ${PWD}${CACERT_PATH}.crt
 
 sed -i "s/pem/pem.crt/g" /opt/blockchain-explorer/config.json
