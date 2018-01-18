@@ -30,7 +30,7 @@ sed -i "s|/first-network/crypto-config/peerOrganizations/org1.example.com/users/
 
 openssl x509 -outform der -in ${PWD}${CACERT_PATH} -out ${PWD}${CACERT_PATH}.crt
 
-sed -i "s/pam/pam.crt/g" /opt/blockchain-explorer/config.json
+sed -i "s/pem/pem.crt/g" /opt/blockchain-explorer/config.json
 
 rm -rf /tmp/fabric-client-kvs_peerOrg*
 
